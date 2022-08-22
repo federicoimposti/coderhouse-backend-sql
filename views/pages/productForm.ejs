@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head'); %>
+        
+        <script src="/socket.io/socket.io.js"></script>
+        <title>Coderhouse Backend - Desafío 05 - EJS</title>
+    </head>
+    <body>
+        <div class="container">
+            <form action="/productos" method="POST" class="form-files" onsubmit="return addProduct(this)">
+                <input type="text" placeholder="Nombre" name="title" id="product-title">
+                <input type="text" placeholder="Precio" name="price" id="product-price">
+                <input type="text" placeholder="URL Imagen" name="image" id="product-image">
+                <input type="submit" value="Enviar">
+            </form>
+            <div id="products"></div>
+            <h3 class="messages-title">Centro de mensajes</h3>
+            <div id='messages'></div>  
+            <form action="javascript:void(0);" onsubmit="return addMessage(this)" class="messages-form">
+                <input type="text" id="email" placeholder="Tu email" >
+                <input type="text" id="texto" placeholder="Cuéntanos algo...">
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </body>
+    <script src="main.js"></script>
+</html>

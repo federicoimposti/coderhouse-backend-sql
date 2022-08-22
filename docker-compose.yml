@@ -23,6 +23,8 @@ services:
 
   mariadb:
     image: mariadb:10.4
+    ports:
+      - "3036:3306"
     restart: always
     command: "mysqld --init-file /data/application/init.sql"
     volumes:
